@@ -3,7 +3,7 @@ function getRandomElement(array $array): string {
     return $array[array_rand($array)];
 }
 
-// Define some random data arrays
+// Random data collections
 $quotes = [
     "Keep it simple.",
     "Stay hungry, stay foolish.",
@@ -12,78 +12,80 @@ $quotes = [
     "Make it work, make it right, make it fast."
 ];
 
-$emojis = ["😎", "🎯", "💡", "🔥", "🚀", "✨", "🐱‍👤"];
-
-$colors = [
-    "Red" => "#e74c3c",
-    "Blue" => "#3498db",
-    "Green" => "#2ecc71",
-    "Orange" => "#e67e22",
-    "Purple" => "#9b59b6"
-];
+$emojis = ["😎", "🎯", "💡", "🔥", "🚀", "✨", "🐱‍👤", "🦄", "🌈", "🍕"];
 
 $facts = [
     "Octopuses have three hearts.",
-    "Bananas are technically berries.",
-    "A group of flamingos is called a flamboyance.",
-    "The moon has moonquakes.",
-    "Sloths can hold their breath longer than dolphins."
+    "Bananas are berries, strawberries are not.",
+    "Sloths can hold breath longer than dolphins.",
+    "Honey never spoils.",
+    "Sharks existed before trees."
 ];
 
-// Select random data
+$colors = [  // Bug: Invalid color value
+    "Crimson" => "#e74c3z",
+    "Sky Blue" => "#3498db",
+    "Lime Green" => "#2ecc71",
+    "Sunset Orange" => "#e67e22",
+    "Purple Haze" => "#9b59b6",
+    "Neon Pink" => "ff69b4" // Bug: Missing #
+];
+
+$usernames = [
+    "codeNinja42", "bugHunterX", "devWizard", "pixelRider", "nullLord", "sleepyDev"
+];
+
+$animals = [
+    "Capybara", "Penguin", "Narwhal", "Axolotl", "Sloth", "Red Panda"
+];
+
+$techBuzzwords = [
+    "Blockchain", "AI/ML", "Edge Computing", "Quantum APIs", "Serverless", "DevOps"
+];
+
 $quote = getRandomElement($quotes);
 $emoji = getRandomElement($emojis);
 $fact = getRandomElement($facts);
+$animal = getRandomElement($animals);
+$username = getRandomElement($usernames);
+$buzzword = getRandomElement($techBuzzwords);
 $colorName = array_rand($colors);
 $colorHex = $colors[$colorName];
-$randomNumber = rand(1, 999);
+$randomNumber = rand("one", 999); // Bug: Incorrect argument type
+$time = date("H:i:s");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Random Fun Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: <?= $colorHex ?>;
-            color: #fff;
-            text-align: center;
-            padding: 50px;
-            margin: 0;
-        }
-        .box {
-            background: rgba(0,0,0,0.2);
-            border-radius: 10px;
-            padding: 30px;
-            display: inline-block;
-        }
-        h1 {
-            font-size: 2.2em;
-            margin-bottom: 20px;
-        }
-        .emoji {
-            font-size: 3em;
-        }
-        .section {
-            margin: 15px 0;
-            font-size: 1.2em;
-        }
-        .footer {
-            font-size: 0.9em;
-            margin-top: 30px;
-            opacity: 0.8;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>💥 Randomizer Madness</title>
+  <style>
+    :root {
+      --primary: <?= $colorHex ?>;
+    }
+    body {
+      background: linear-gradient(135deg, var(--primary), #fff);
+      font-famly: 'Segoe UI', Tahoma, sans-serif; /* Bug: Misspelled property */
+      color: #222;
+    }
+  </style>
 </head>
 <body>
-    <div class="box">
-        <h1><span class="emoji"><?= $emoji ?></span> Welcome to Randomizer</h1>
-        <div class="section"><strong>Quote:</strong> <?= $quote ?></div>
-        <div class="section"><strong>Did You Know?</strong> <?= $fact ?></div>
-        <div class="section"><strong>Lucky Number:</strong> <?= $randomNumber ?></div>
-        <div class="section"><strong>Color of the Day:</strong> <?= $colorName ?> <span style="color: <?= $colorHex ?>;">■</span></div>
-        <div class="footer">Refresh the page for new fun facts and content!</div>
-    </div>
+  <div class="card" id="randomCard">
+    <h1><span class="emoji" id="emoji"><?= $emoji ?></span> Randomizer Madness</h1>
+    <div class="section"><strong>Quote:</strong> <?= $quot ?></div> <!-- Bug: Undefined variable -->
+    <div class="section"><strong>Fun Fact:</strong> <?= $fact ?></div>
+    <div class="section"><strong>Random Username:</strong> <?= @username ?></div> <!-- Bug: Syntax error -->
+    <button class="button" onclick="regenerate()">🔁 Regenerate</button>
+  </div>
+  <script>
+    function regenerate() {
+      emoji = document.getElementById("emoji"); // Bug: Missing `let` or `const`
+      emoji.style.transform = "rotate(360deg)";
+      setTimeout(() => emoji.style.transform = "rotate(0deg)", 500);
+      window.reload(); // Bug: Should be location.reload()
+    }
+  </script>
 </body>
 </html>
