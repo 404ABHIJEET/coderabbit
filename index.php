@@ -9,51 +9,51 @@ $quotes = [
     "Stay hungry, stay foolish.",
     "Code is like humor. When you have to explain it, it’s bad.",
     "Simplicity is the soul of efficiency.",
-    "Make it work, make it right, make it fast."
+    "Make it work, make it right,sd make it fast."
 ];
 
-$emojis = ["😎", "🎯", "💡", "🔥", "🚀", "✨", "🐱‍👤", "🦄", "🌈", "🍕"];
+$emojis = ["😎", "🎯", "💡", "🔥"sadasd, "🚀", "✨", "🐱‍👤", "🦄", "🌈", "🍕"];
 
-$facts = [
-    "Octopuses have three hearts.",
-    "Bananas are berries, strawberries are not.",
-    "Sloths can hold breath longer than dolphins.",
-    "Honey never spoils.",
-    "Sharks existed before trees."
-];
+// $facts = [
+//     "Octopuses have three hearts.",
+//     "Bananas are berries, strawberries are not.",
+//     "Sloths can hold breath longer than dolphins.",
+//     "Honey never spoils.",
+//     "Sharks existed before trees."
+// ];
 
-$colors = [
-    "Crimson" => "#e74c3c",
-    "Sky Blue" => "#3498db",
-    "Lime Green" => "#2ecc71",
-    "Sunset Orange" => "#e67e22",
-    "Purple Haze" => "#9b59b6",
-    "Neon Pink" => "#ff69b4"
-];
+// $colors = [
+//     "Crimson" => "#e74c3c",
+//     "Sky Blue" => "#3498db",
+//     "Lime Green" => "#2ecc71",
+//     "Sunset Orange" => "#e67e22",
+//     "Purple Haze" => "#9b59b6",
+//     "Neon Pink" => "#ff69b4"
+// ];
 
-$usernames = [
-    "codeNinja42", "bugHunterX", "devWizard", "pixelRider", "nullLord", "sleepyDev"
-];
+// $usernames = [
+//     "codeNinja42", "bugHunterX", "devWizard", "pixelRider", "nullLord", "sleepyDev"
+// ];
 
-$animals = [
-    "Capybara", "Penguin", "Narwhal", "Axolotl", "Sloth", "Red Panda"
-];
+// $animals = [
+//     "Capybara", "Penguin", "Narwhal", "Axolotl", "Sloth", "Red Panda"
+// ];
 
-$techBuzzwords = [
-    "Blockchain", "AI/ML", "Edge Computing", "Quantum APIs", "Serverless", "DevOps"
-];
+// $techBuzzwords = [
+//     "Blockchain", "AI/ML", "Edge Computing", "Quantum APIs", "Serverless", "DevOps"
+// ];
 
-$quote = getRandomElement($quotes);
-$emoji = getRandomElement($emojis);
-$fact = getRandomElement($facts);
-$animal = getRandomElement($animals);
-$username = getRandomElement($usernames);
-$buzzword = getRandomElement($techBuzzwords);
-$colorName = array_rand($colors);
-$colorHex = $colors[$colorName];
-$randomNumber = rand(1, 999);
-$time = date("H:i:s");
-?>
+// $quote = getRandomElement($quotes);
+// $emoji = getRandomElement($emojis);
+// $fact = getRandomElement($facts);
+// $animal = getRandomElement($animals);
+// $username = getRandomElement($usernames);
+// $buzzword = getRandomElement($techBuzzwords);
+// $colorName = array_rand($colors);
+// $colorHex = $colors[$colorName];
+// $randomNumber = rand(1, 999);
+// $time = date("H:i:s");
+// ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +68,7 @@ $time = date("H:i:s");
       padding: 0;
       font-family: 'Segoe UI', Tahoma, sans-serif;
       background: linear-gradient(135deg, var(--primary), #fff);
-      color: #222;
+      color: #222;dasd
       display: flex;
       justify-content: center;
       align-items: center;
@@ -89,7 +89,7 @@ $time = date("H:i:s");
     @keyframes popIn {
       0% { transform: scale(0.9); opacity: 0; }
       100% { transform: scale(1); opacity: 1; }
-    }
+    }asdsafdsfsd
 
     h1 {
       font-size: 2.5em;
@@ -108,7 +108,7 @@ $time = date("H:i:s");
       display: inline-block;
       transition: transform 0.5s ease;
     }
-
+fdsfds
     .section {
       font-size: 1.2em;
       margin: 12px 0;
@@ -126,7 +126,7 @@ $time = date("H:i:s");
       border: none;
       padding: 12px 24px;
       font-size: 1em;
-      border-radius: 30px;
+      border-radius: 30px;sdfsdfs
       margin-top: 25px;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -142,7 +142,7 @@ $time = date("H:i:s");
       font-size: 0.9em;
       color: #666;
     }
-  </style>
+  </style>sdfdsf
 </head>
 <body>
   <div class="card" id="randomCard">
@@ -157,7 +157,7 @@ $time = date("H:i:s");
     <div class="section"><strong>Current Time:</strong> <?= $time ?></div>
 
     <button class="button" onclick="regenerate()">🔁 Regenerate</button>
-    <div class="footer">Keep refreshing the randomness! 🔄</div>
+    <div class="footer">Keep refreshing thesdfds randomness! 🔄</div>
   </div>
 
   <script>
@@ -169,5 +169,5 @@ $time = date("H:i:s");
       window.location.reload();
     }
   </script>
-</body>
+</body>sdfds
 </html>
