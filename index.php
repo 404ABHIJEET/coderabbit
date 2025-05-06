@@ -85,6 +85,6 @@ $randomNumber = rand(1, 999);
         <div class="section"><strong>Color of the Day:</strong> <?= $colorName ?> <span style="color: <?= $colorHex ?>;">■</span></div>
         <div class="footer">Refresh the page for new fun facts and content!</div>
     </div>
-    <p>dsadsankj</p>
+    <p>dsadsankjweirewiryweiuryw</p>
 </body>
 </html>
